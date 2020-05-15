@@ -29,10 +29,10 @@ const search2 = webix.protoUI({
 /**
  * Creates search element with cross and zoom icons
  *
- * @param {string} target
+ * @param {string} target id
  * @param {string|function} filter
  */
-export default function newSearch(target, filter){
+export function newSearch(target, filter) {
     return {
         view: "search2",
         placeholder: "type to filter",
