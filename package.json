@@ -1,7 +1,7 @@
 {
-  "name": "@waltz-controls/XXX",
+  "name": "@waltz-controls/waltz-webix-extensions",
   "version": "1.0.0",
-  "description": "XXX",
+  "description": "webix extensions for Waltz",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "watch": {
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/waltz-controls/XXX.git"
+    "url": "git+https://github.com/waltz-controls/waltz-webix-extensions.git"
   },
   "keywords": [    
     "waltz",
@@ -24,9 +24,9 @@
   "author": "Ingvord",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/waltz-controls/XXX/issues"
+    "url": "https://github.com/waltz-controls/waltz-webix-extensions/issues"
   },
-  "homepage": "https://github.com/waltz-controls/XXX#readme",
+  "homepage": "https://github.com/waltz-controls/waltz-webix-extensions#readme",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.2",
     "@rollup/plugin-multi-entry": "^3.0.0",
