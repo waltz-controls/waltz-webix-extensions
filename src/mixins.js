@@ -1,5 +1,5 @@
 import {kTangoRestContext} from "@waltz-controls/waltz-tango-rest-plugin";
-import {kUserContext} from "controllers/user_context";
+import {kUserContext} from "@waltz-controls/waltz-user-context-plugin";
 import {kControllerUserAction} from "controllers/user_action_controller";
 
 /**

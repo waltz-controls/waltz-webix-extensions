@@ -12,3 +12,7 @@
 npm install @waltz-controls/waltz-webix-extensions --registry=https://npm.pkg.github.com/waltz-controls
 ```
 
+## Runtime dependencies:
+
+1. Waltz
+
