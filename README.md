@@ -6,13 +6,14 @@
 
 # waltz-webix-extensions
 
-
-
 ```bash
 npm install @waltz-controls/waltz-webix-extensions --registry=https://npm.pkg.github.com/waltz-controls
 ```
 
 ## Runtime dependencies:
 
-1. Waltz
+1. `@waltz-controls/middleware`
+2. `@waltz-controls/waltz-tango-rest-plugin`
+3. `@waltz-controls/waltz-user-context-plugin`
+4. `@waltz-controls/waltz-user-actions-plugin`
 

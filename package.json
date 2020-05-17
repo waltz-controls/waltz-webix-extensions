@@ -1,15 +1,16 @@
 {
   "name": "@waltz-controls/waltz-webix-extensions",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "webix extensions for Waltz",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/_virtual/index.esm.js",
+  "module": "dist/_virtual/index.esm.js",
   "watch": {
     "build": "{src,test}/*.js"
   },
   "scripts": {
     "clean": "rm -rf dist",
     "build": "rollup -c",
+    "prepublishOnly": "mv dist/_virtual/_rollup:plugin-multi-entry:entry-point dist/_virtual/index.esm.js",
     "watch": "rollup -c -w"
   },
   "repository": {

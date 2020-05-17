@@ -1,6 +1,6 @@
 import {kTangoRestContext} from "@waltz-controls/waltz-tango-rest-plugin";
 import {kUserContext} from "@waltz-controls/waltz-user-context-plugin";
-import {kControllerUserAction} from "controllers/user_action_controller";
+import {kControllerUserAction} from "@waltz-controls/waltz-user-actions-plugin";
 
 /**
  * Limits and reverses list element
