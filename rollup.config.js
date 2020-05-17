@@ -7,7 +7,7 @@ export default [
     // browser-friendly UMD build
     {
         input: 'src/*.js',
-        external: ['@waltz-controls/middleware', 'rxjs', 'rxjs/operators', 'rxjs/fetch', 'controllers/tango_rest', 'controllers/user_context', 'controllers/user_action_controller'],
+        external: ['@waltz-controls/middleware', '@waltz-controls/waltz-tango-rest-plugin', 'rxjs', 'rxjs/operators', 'rxjs/fetch', 'controllers/tango_rest', 'controllers/user_context', 'controllers/user_action_controller'],
         output: {
             file: pkg.module,
             format: 'es',
