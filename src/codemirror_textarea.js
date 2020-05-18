@@ -1,10 +1,10 @@
-// import 'codemirror/lib/codemirror.css';
-// import 'codemirror/addon/hint/show-hint.css';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/addon/hint/show-hint.css';
 //
-// import '!!script-loader!codemirror/lib/codemirror.js';
-// import '!!script-loader!codemirror/mode/javascript/javascript.js';
-// import '!!script-loader!codemirror/addon/hint/show-hint.js';
-// import '!!script-loader!codemirror/addon/hint/javascript-hint.js';
+import CodeMirror from 'codemirror/lib/codemirror.js';
+import 'codemirror/mode/javascript/javascript.js';
+import 'codemirror/addon/hint/show-hint.js';
+import 'codemirror/addon/hint/javascript-hint.js';
 
 (function () {
 

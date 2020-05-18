@@ -1,6 +1,6 @@
 {
   "name": "@waltz-controls/waltz-webix-extensions",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "webix extensions for Waltz",
   "main": "dist/_virtual/index.esm.js",
   "module": "dist/_virtual/index.esm.js",
@@ -35,6 +35,22 @@
     "rollup": "^2.3.4"
   },
   "dependencies": {
+    "codemirror": "^5.53.2",
     "rxjs": "^6.5.5"
-  }
+  },
+  "runtimeDependencies": [
+    "@waltz-controls/middleware",
+    "@waltz-controls/waltz-tango-rest-plugin",
+    "@waltz-controls/waltz-user-context-plugin",
+    "@waltz-controls/waltz-user-actions-plugin",
+    "rxjs",
+    "rxjs/operators",
+    "rxjs/fetch",
+    "codemirror/lib/codemirror.css",
+    "codemirror/addon/hint/show-hint.css",
+    "codemirror/lib/codemirror.js",
+    "codemirror/mode/javascript/javascript.js",
+    "codemirror/addon/hint/show-hint.js",
+    "codemirror/addon/hint/javascript-hint.js"
+  ]
 }
