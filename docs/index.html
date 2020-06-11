@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset='utf-8'>
-  <title>@waltz-controls/waltz-webix-extensions 1.0.10 | Documentation</title>
+  <title>@waltz-controls/waltz-webix-extensions 1.0.11 | Documentation</title>
   <meta name='description' content='webix extensions for Waltz'>
   <meta name='viewport' content='width=device-width,initial-scale=1'>
   <link href='assets/bass.css' rel='stylesheet'>
@@ -15,7 +15,7 @@
     <div class='overflow-auto fs0 height-viewport-100' id='split-left'>
         <div class='py1 px2'>
             <h3 class='mb0 no-anchor'>@waltz-controls/waltz-webix-extensions</h3>
-            <div class='mb1'><code>1.0.10</code></div>
+            <div class='mb1'><code>1.0.11</code></div>
             <input
                     autocapitalize='off'
                     autocorrect='off'
@@ -147,16 +147,16 @@
 
 
                     <li><a
-                  href='#waltzwidgetmixin'
-                  class=" toggle-sibling">
-                  WaltzWidgetMixin
-                  <span class='icon'>▸</span>
-                </a>
-                
-                <div class='toggle-target display-none'>
-                  
-                  <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'><span>Static members</span></li>
+                            href='#waltzwidgetmixin'
+                            class=" toggle-sibling">
+                        WaltzWidgetMixin
+                        <span class='icon'>▸</span>
+                    </a>
+
+                        <div class='toggle-target display-none'>
+
+                            <ul class='list-reset py1-ul pl1'>
+                                <li class='h5'><span>Static members</span></li>
                     
                       <li><a
                         href='#waltzwidgetmixingettangorest'
@@ -176,16 +176,16 @@
                           .getUserActionsController
                       </a></li>
 
-                      <li><a
-                              class='regular pre-open'
-                              href='#waltzwidgetmixinbeforeclosemain'>
-                          .beforeCloseMain
-                      </a></li>
+                                <li><a
+                                        class='regular pre-open'
+                                        href='#waltzwidgetmixinbeforeclosemain'>
+                                    .beforeCloseMain
+                                </a></li>
 
-                  </ul>
+                            </ul>
 
 
-                </div>
+                        </div>
 
                     </li>
 
@@ -194,6 +194,16 @@
                             class=""
                             href='#togglesettings'>
                         ToggleSettings
+
+                    </a>
+
+                    </li>
+
+
+                    <li><a
+                            class=""
+                            href='#tangodroptarget'>
+                        TangoDropTarget
 
                     </a>
 
@@ -1036,15 +1046,15 @@
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
 
-  
-  <div class='clearfix'>
 
-      <h3 class='fl m0' id='togglesettings'>
-          ToggleSettings
-      </h3>
+              <div class='clearfix'>
+
+                  <h3 class='fl m0' id='togglesettings'>
+                      ToggleSettings
+                  </h3>
 
 
-  </div>
+              </div>
 
 
               <p>Provides hide/show methods for settings (this.$$('settings')) form element</p>
@@ -1053,6 +1063,33 @@
 
 
           </section>
+
+
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+
+            <div class='clearfix'>
+
+                <h3 class='fl m0' id='tangodroptarget'>
+                    TangoDropTarget
+                </h3>
+
+
+            </div>
+
+
+            <p>Defines onBeforeDrop for this widget.</p>
+            <p>Calls this.config.root.addXXX(TangoId), where XXX: Device, Attribute, Command, Pipe</p>
+
+            <div class='pre p1 fill-light mt0'>TangoDropTarget</div>
+
+            <p>
+                Type:
+                WebixMixin
+            </p>
+
+
+        </section>
 
 
         <section class='p2 mb2 clearfix bg-white minishadow'>
