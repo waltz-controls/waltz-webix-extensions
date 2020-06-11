@@ -1,6 +1,6 @@
 {
   "name": "@waltz-controls/waltz-webix-extensions",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "webix extensions for Waltz",
   "main": "dist/_virtual/index.esm.js",
   "module": "dist/_virtual/index.esm.js",
@@ -39,6 +39,7 @@
     "rxjs": "^6.5.5"
   },
   "runtimeDependencies": [
+    "@waltz-controls/tango-rest-client",
     "@waltz-controls/middleware",
     "@waltz-controls/waltz-tango-rest-plugin",
     "@waltz-controls/waltz-user-context-plugin",
