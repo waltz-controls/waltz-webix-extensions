@@ -1,6 +1,6 @@
 {
   "name": "@waltz-controls/waltz-webix-extensions",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "webix extensions for Waltz",
   "main": "dist/_virtual/index.esm.js",
   "module": "dist/_virtual/index.esm.js",
