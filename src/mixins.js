@@ -124,12 +124,60 @@ export const ToggleSettings = {
             this.showSettings();
         }
     },
-    hideSettings(){
+    hideSettings() {
         const $$settings = this.$$('settings');
         $$settings.hide();
     },
-    showSettings(){
+    showSettings() {
         const $$settings = this.$$('settings');
         $$settings.show();
+    }
+}
+
+function devicesTreeIdToTangoId(tree, id) {
+    const item = tree.getItem(id);
+    const host = tree.getTangoHostId(item);
+
+    return TangoId.fromDeviceId(`${host}/${item.device_name}`)
+}
+
+/**
+ * Defines onBeforeDrop for this widget.
+ *
+ * Calls this.config.root.addXXX(TangoId), where XXX: Device, Attribute, Command, Pipe
+ *
+ * @type {WebixMixin}
+ */
+export const TangoDropTarget = {
+    extension() {
+        return {
+            on: {
+                onBeforeDrop(context) {
+                    if (context.from === this) return true;
+                    if (context.from.config.view === 'device_tree_list' && //drop attribute from device control panel
+                        context.from.config.$id === 'attrs') {
+                        this.config.root.addAttribute(TangoId.fromMemberId(context.source[0]));
+                    }
+                    if (context.from.config.view === 'device_tree_list' && //drop command from device control panel
+                        context.from.config.$id === 'commands') {
+                        this.config.root.addCommand(TangoId.fromMemberId(context.source[0]));
+                    }
+                    if (context.from.config.view === 'device_tree_list' && //drop command from device control panel
+                        context.from.config.$id === 'pipes') {
+                        this.config.root.addPipe(TangoId.fromMemberId(context.source[0]));
+                    } else if (context.from.config.view === 'devices_tree' && //drop from tango devices tree
+                        (context.from.getItem(context.source[0]).isAlias || context.from.getItem(context.source[0]).isMember)) {
+                        this.config.root.addDevice(devicesTreeIdToTangoId(context.from, context.source[0]));
+                    } else {
+                        this.getTopParentView().showOverlay(`${context.from.config.$id} are not supported by this widget`);
+                    }
+
+                    return false;
+                }
+            }
+        }
+    },
+    $init(config) {
+        webix.extend(config, this.extension());
     }
 }
