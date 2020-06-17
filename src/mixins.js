@@ -150,33 +150,30 @@ function devicesTreeIdToTangoId(tree, id) {
  * @type {WebixMixin}
  */
 export const TangoDropTarget = {
-    extension() {
-        return {
-            on: {
-                onBeforeDrop(context) {
-                    if (context.from === this) return true;
-                    if (context.from.config.view === 'device_tree_list' && //drop attribute from device control panel
-                        context.from.config.$id === 'attrs') {
-                        this.config.root.addAttribute(TangoId.fromMemberId(context.source[0]));
-                    } else if (context.from.config.view === 'device_tree_list' && //drop command from device control panel
-                        context.from.config.$id === 'commands') {
-                        this.config.root.addCommand(TangoId.fromMemberId(context.source[0]));
-                    } else if (context.from.config.view === 'device_tree_list' && //drop command from device control panel
-                        context.from.config.$id === 'pipes') {
-                        this.config.root.addPipe(TangoId.fromMemberId(context.source[0]));
-                    } else if (context.from.config.view === 'devices_tree' && //drop from tango devices tree
-                        (context.from.getItem(context.source[0]).isAlias || context.from.getItem(context.source[0]).isMember)) {
-                        this.config.root.addDevice(devicesTreeIdToTangoId(context.from, context.source[0]));
-                    } else {
-                        this.getTopParentView().showOverlay(`${context.from.config.$id} are not supported by this widget`);
-                    }
-
-                    return false;
-                }
-            }
-        }
-    },
     $init(config) {
-        webix.extend(config, this.extension());
+        if (config.root === undefined) throw new Error('TangoDropTarget mixin requires root (WaltzWidget) defined in the config');
+
+        this.$ready.push(() => {
+            this.attachEvent("onBeforeDrop", (context) => {
+                if (context.from === this) return true;
+                if (context.from.config.view === 'device_tree_list' && //drop attribute from device control panel
+                    context.from.config.$id === 'attrs') {
+                    config.root.addAttribute(TangoId.fromMemberId(context.source[0]));
+                } else if (context.from.config.view === 'device_tree_list' && //drop command from device control panel
+                    context.from.config.$id === 'commands') {
+                    config.root.addCommand(TangoId.fromMemberId(context.source[0]));
+                } else if (context.from.config.view === 'device_tree_list' && //drop command from device control panel
+                    context.from.config.$id === 'pipes') {
+                    config.root.addPipe(TangoId.fromMemberId(context.source[0]));
+                } else if (context.from.config.view === 'devices_tree' && //drop from tango devices tree
+                    (context.from.getItem(context.source[0]).isAlias || context.from.getItem(context.source[0]).isMember)) {
+                    config.root.addDevice(devicesTreeIdToTangoId(context.from, context.source[0]));
+                } else {
+                    this.getTopParentView().showOverlay(`${context.from.config.$id} are not supported by this widget`);
+                }
+
+                return false;
+            })
+        });
     }
 }
