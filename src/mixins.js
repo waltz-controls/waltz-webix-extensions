@@ -156,11 +156,12 @@ export const TangoDropTarget = {
         webix.extend(this, webix.DragControl);
 
         this.$ready.push(() => {
+            const self = this;
             this.addDrop(this.getNode(), {
                 $drop() {
                     const context = webix.DragControl.getContext();
-                    if(context.from === this)
-                            return true;
+                    if (context.from === self)
+                        return true;
                     if (context.from.config.view === 'device_tree_list' && //drop attribute from device control panel
                         context.from.config.$id === 'attrs') {
                         config.root.addAttribute(TangoId.fromMemberId(context.source[0]));
@@ -174,7 +175,7 @@ export const TangoDropTarget = {
                         (context.from.getItem(context.source[0]).isAlias || context.from.getItem(context.source[0]).isMember)) {
                         config.root.addDevice(devicesTreeIdToTangoId(context.from, context.source[0]));
                     } else {
-                        this.getTopParentView().showOverlay(`${context.from.config.$id} are not supported by this widget`);
+                        self.getTopParentView().showOverlay(`${context.from.config.$id} are not supported by this widget`);
                     }
 
                     return false;
