@@ -153,7 +153,7 @@ export const TangoDropTarget = {
     $init(config) {
         if (config.root === undefined) throw new Error('TangoDropTarget mixin requires root (WaltzWidget) defined in the config');
 
-        webix.extend(this, webix.dragControl);
+        webix.extend(this, webix.DragControl);
 
         this.$ready.push(() => {
             this.addDrop(this.getNode(), {
